@@ -131,8 +131,19 @@ mutable struct HalfSpaceTree
     counter::Int
     firstwindow::Bool
 
-    HalfSpaceTree(;ntrees=10, height=8, windowsize=250, limits=nothing) =
-    new(ntrees, height, windowsize, limits, nothing, 0, true)
+    function HalfSpaceTree(;ntrees=10, height=8, windowsize=250, limits=nothing)
+        if !(ntrees > 0)
+            throw(ArgumentError("ntrees must be > 0"))
+        end
+        if !(height > 0)
+            throw(ArgumentError("height must be > 0"))
+        end
+        if !(windowsize > 0)
+            throw(ArgumentError("windowsize must be > 0"))
+        end
+
+        new(ntrees, height, windowsize, limits, nothing, 0, true)
+    end
 end
 
 sizelimit(hst::HalfSpaceTree) = 0.1 * hst.windowsize
