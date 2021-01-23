@@ -33,7 +33,7 @@ hst = HalfSpaceTree(ntrees=10, height=3, windowsize=3)
 for e in x[1:3]
     learn!(hst, e)
 end
-score(hst, x[end - 1]) < 0.5
+score(hst, x[end - 1])
 ```
 
 ## API
