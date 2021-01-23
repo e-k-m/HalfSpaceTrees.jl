@@ -16,6 +16,8 @@ package are:
 
 - Support features with missing values.
 
+For more information see original paper [here](https://www.ijcai.org/Proceedings/11/Papers/254.pdf).
+
 ## Installation
 
 ```julia-repl
